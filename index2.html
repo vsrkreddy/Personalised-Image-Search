@@ -1,0 +1,196 @@
+<!--<%@page import="com.oreilly.servlet.*,java.sql.*,java.lang.*,databaseconnection.*,java.text.SimpleDateFormat,java.util.*,java.io.*,javax.servlet.*, javax.servlet.http.*"  errorPage="Error.jsp"%>
+<% 
+	
+	Statement st = null;
+	ResultSet rs1=null;
+	String name=(String)session.getAttribute("name");
+	String email=(String)session.getAttribute("email");
+	System.out.print(email);
+	session.setAttribute("name",name);
+	session.setAttribute("email",email);
+	try{
+		
+		Connection con=databasecon.getconnection();
+		st=con.createStatement();
+		String sql1="select name from file where email='"+email+"'";
+		
+		rs1=st.executeQuery(sql1);
+%>-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content=" " />
+<meta name="description" content=" " />
+<title>no</title>
+<link type="text/css" href="css/style.css" rel="stylesheet" media="screen" />
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<!--[if IE]>
+<link type="text/css" href="css/ie.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="js/pngfix.js"></script>
+<script type="text/javascript"> 
+DD_belatedPNG.fix('img,#logo');
+</script> 
+<![endif]-->
+</head>
+<body>
+
+
+<div class="main-bg">
+  <div id="sub-page" class="main-wrap">
+    <div id="header" class="mod-con"> 
+      <h1 id="logo"><a href="#"></a></h1>
+      <ul id="main-menu">
+        <li><a href="index.html"><strong>Home</strong></a></li>
+        <li><a href="about.html"><strong>About</strong></a></li>
+        <li><a href="portfolio.html"><strong>Portfolio</strong></a></li>
+        <li><a class="cur" href="blog.html"><strong>Blog</strong></a></li>
+        <li><a href="contact.html"><strong>Contact</strong></a></li>
+      </ul>
+    </div>
+    <div id="main" class="mod-con">
+      <div id="blog-page" class="container clearfix">
+        <div class="main-con">
+          <div class="title-nav">
+            <h2>Blog</h2>
+          </div>
+          <ul class="blog-list">
+            <li>
+              <h3>types of dances</h3>
+              <div class="author">Posted in: <a href="#">Photography</a> on jan15 2015</div>
+              <div class="pic"><img src="viewimage.jsp?email=<%=email%>" alt="" /></div>
+              <div class="con">dance is a art. Dance has its signficance in India.</div>
+              <div class="clearfix"><span class="tags">Tags: <a href="#">Dance</a>, <a href="#">Vacations</a>, <a href="#">katak</a>, <a href="#">Dance1</a></span> <a href="#" class="btn">Read More</a><a href="#" class="btn">23 Comments</a> </div>
+            </li>
+            <li>
+              <h3>Types of dances</h3>
+              <div class="author">Posted in: <a href="#">Photography</a> on jan15 2015</div>
+              <div class="pic"><img src="image/temp4.jpg" alt="" /></div>
+              <div class="con">dance is good for health</div>
+              <div class="clearfix"><span class="tags">Tags: <a href="#">Beach</a>, <a href="#">Vacations</a>, <a href="#">katak</a>, <a href="#">Sea</a></span> <a href="#" class="btn">Read More</a><a href="#" class="btn">23 Comments</a> </div>
+            </li>
+            <li>
+              <h3>types of dances</h3>
+              <div class="author">Posted in: <a href="#">Photography</a> on jan15 2015</div>
+              <div class="pic"><img src="image/temp4.jpg" alt="" /></div>
+              <div class="con">dance is good for health</div>
+              <div class="clearfix"><span class="tags">Tags: <a href="#">Dance</a>, <a href="#">Vacations</a>, <a href="#">dance2</a>, <a href="#">Dance3</a></span> <a href="#" class="btn">Read More</a><a href="#" class="btn">23 Comments</a> </div>
+            </li>
+          </ul>
+          <div class="pages-nav"><a href="#" class="previous">« Previous Page</a> 
+            <div class="pages"><a href="#">1</a><a href="#">2</a><a href="#">3</a></div>
+            <a href="#" class="next">Next Page »</a></div>
+        </div>
+        <div class="sidebar">
+          <div id="welcome-guest">
+            <div class="title-nav">
+              <h2>Welcome Guest</h2>
+            </div>
+            <div class="con"><img src="image/browser_icon.png" alt="" />
+              <p>we can use many browsers in this project.</p>
+            </div>
+          </div>
+          <div id="site-navigation">
+            <div class="title-nav">
+              <h2>Site Navigation</h2>
+            </div>
+            <div class="con">
+              <ul>
+                <li><a href="#">Welcome Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Portfolio</a></li>
+                <li><a href="#">New Blogs</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="categories">
+            <div class="title-nav">
+              <h2>Categories</h2>
+            </div>
+            <div class="con">
+              <ul>
+                <li><span>33</span><a href="#">Photography</a></li>
+                <li><span>33</span><a href="#">Our Portfolio</a></li>
+                <li><span>33</span><a href="#">Graphic Design</a></li>
+                <li><span>3</span><a href="#">Web Designs</a></li>
+                <li><span>33</span><a href="#">Web Development</a></li>
+                <li><span>33</span><a href="#">Iconography</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="blog-archives">
+            <div class="title-nav">
+              <h2>Blog Archives</h2>
+            </div>
+            <div class="con">
+              <ul>
+                <li><span>33</span><a href="#">jan 2015</a></li>
+                <li><span>33</span><a href="#">Feb2015</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="network-connect">
+            <div class="title-nav">
+              <h2>Network Connect</h2>
+            </div>
+            <div class="con"> <a href="#"><img src="image/twitter_ico.png" alt="" /></a><a href="#"><img src="image/fscebook_ico.png" alt="" /></a><a href="#"><img src="image/flickr_ico.png" alt="" /></a><a href="#"><img src="image/in_ico.png" alt="" /></a><a href="#"><img src="image/t_ico.png" alt="" /></a><a href="#"><img src="image/youtube_ico.png" alt="" /></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="siteintro-wrap">
+  <div id="siteintro" class="mod-con clearfix">
+    <dl class="about-us">
+      <dt>About Us</dt>
+      <dd><a href="#">Our Company</a></dd>
+      <dd><a href="#">Our Blog</a></dd>
+      <dd><a href="#">Submit a Site</a></dd>
+      <dd><a href="#">Contact Us</a></dd>
+      <dd><a href="#">Help &amp; Terms</a></dd>
+      <dd><a href="#">Read Our FAQ</a></dd>
+    </dl>
+    <dl class="categories">
+      <dt>Categories</dt>
+      <dd><a href="#">Trends &amp; Technology</a></dd>
+      <dd><a href="#">Design Companies</a></dd>
+      <dd><a href="#">Design Freelancers</a></dd>
+      <dd><a href="#">Web Portfolios</a></dd>
+      <dd><a href="#">Web Development</a></dd>
+      <dd><a href="#">General Icons</a></dd>
+    </dl>
+    <dl class="gallery">
+      <dt>From The Gallery</dt>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+      <dd><a href="#"><img src="image/temp1.jpg" alt="" /></a></dd>
+    </dl>
+    <dl class="twittwe-updates">
+      <dt>Twittwe Updates</dt>
+      <dd>
+        <p><a href="#">@Dellustrations</a> there is a new designer in 
+          town people! It’s amazing How you can do
+          everything inside twitter! <a href="#">http://bit.urds</a></p>
+        <p><em>2 minutes ago via</em> TweeterDeck</p>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<%
+	}
+	catch(Exception e2){
+		out.println(e2.getMessage());
+	}
+%>
+</body>
+</html>
